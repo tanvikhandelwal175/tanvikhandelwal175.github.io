@@ -491,3 +491,19 @@ flex-wrap:wrap;
 }
 
 }
+
+.hero-tagline{
+
+    margin:20px 0;
+
+    font-size:18px;
+
+    letter-spacing:3px;
+
+    color:var(--gold);
+
+    text-transform:uppercase;
+
+    font-weight:600;
+
+}
