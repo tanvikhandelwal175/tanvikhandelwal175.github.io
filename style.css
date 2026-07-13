@@ -271,3 +271,217 @@ height:220px;
 }
 
 }
+
+/* ================= HERO SECTION ================= */
+
+:root{
+    --bg:#F8F6F2;
+    --text:#222222;
+    --brown:#7B5A45;
+    --gold:#C6A56A;
+    --white:#ffffff;
+    --shadow:0 15px 40px rgba(0,0,0,0.12);
+}
+
+.hero{
+
+    min-height:100vh;
+    background:var(--bg);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:120px 8%;
+
+}
+
+.hero-container{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:80px;
+
+    max-width:1400px;
+
+    width:100%;
+
+}
+
+.hero-left{
+
+    flex:1;
+
+}
+
+.hello{
+
+    color:var(--gold);
+
+    letter-spacing:4px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.hero-left h1{
+
+    font-size:64px;
+
+    color:var(--text);
+
+    line-height:1.1;
+
+    margin-bottom:20px;
+
+}
+
+.hero-left h2{
+
+    font-size:28px;
+
+    color:var(--brown);
+
+    margin-bottom:25px;
+
+}
+
+.hero-description{
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    color:#555;
+
+    max-width:600px;
+
+}
+
+.hero-buttons{
+
+    margin-top:40px;
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.primary-btn{
+
+    background:var(--brown);
+
+    color:white;
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.primary-btn:hover{
+
+    background:#5e4333;
+
+}
+
+.secondary-btn{
+
+    border:2px solid var(--brown);
+
+    color:var(--brown);
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.secondary-btn:hover{
+
+    background:var(--brown);
+
+    color:white;
+
+}
+
+.hero-right{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-right img{
+
+    width:100%;
+
+    max-width:600px;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.hero-container{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+.hero-left h2{
+
+font-size:22px;
+
+}
+
+.hero-description{
+
+margin:auto;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+}
