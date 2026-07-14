@@ -61,8 +61,6 @@ nav ul li a:hover{
     color: #7B5A45;
 }
 
-/* Hero */
-
 /* Sections */
 
 section{
@@ -149,29 +147,5 @@ nav ul li{
 section{
     padding:70px 8%;
 }
-
-}
-
-.hero-content{
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:70px;
-max-width:1200px;
-margin:auto;
-}
-
-.hero-image img{
-
-width:320px;
-height:320px;
-
-border-radius:50%;
-
-object-fit:cover;
-
-border:8px solid white;
-
-box-shadow:0 20px 40px rgba(0,0,0,.2);
 
 }
