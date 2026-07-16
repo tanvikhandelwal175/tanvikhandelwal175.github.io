@@ -1477,3 +1477,173 @@ body{
         font-size:16px;
     }
 }
+
+/* =========================
+   POP COLOR + MOTION OVERHAUL
+========================= */
+
+:root{
+    --coral:#FF5A36;
+    --teal:#0FB8A9;
+    --indigo:#7B5EF0;
+    --gold:#F2A93B;
+}
+
+/* ---- Vivid animated gradient headings ---- */
+
+.section-title{
+    color:transparent;
+    background:linear-gradient(100deg, var(--coral), var(--gold), var(--teal), var(--indigo), var(--coral));
+    background-size:400% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    animation:gradientShift 7s linear infinite;
+}
+
+.hero-left h2{
+    color:transparent;
+    background:linear-gradient(100deg, var(--coral), var(--gold), var(--coral));
+    background-size:300% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    animation:gradientShift 5s linear infinite;
+}
+
+@keyframes gradientShift{
+    0%{ background-position:0% center; }
+    100%{ background-position:400% center; }
+}
+
+/* ---- Hero letter-in animation ---- */
+
+.hero-letter{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(50px) rotate(8deg);
+    animation:letterIn .7s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+@keyframes letterIn{
+    to{ opacity:1; transform:translateY(0) rotate(0); }
+}
+
+/* ---- Bolder blobs ---- */
+
+.blob-coral{ opacity:.55; }
+.blob-teal{ opacity:.5; }
+.blob-indigo{ opacity:.5; }
+
+/* ---- Section background tints (pop, not flat beige) ---- */
+
+.about{
+    background:linear-gradient(150deg, #F3E8DA 0%, #F0E4F2 100%);
+}
+
+.leadership{
+    background:linear-gradient(150deg, #F3E8DA 0%, #DFF3F0 100%);
+}
+
+.contact{
+    background:linear-gradient(150deg, #F3E8DA 0%, #FCE3DA 100%);
+}
+
+/* ---- Gradient buttons with glow ---- */
+
+.primary-btn{
+    background:linear-gradient(120deg, var(--coral), var(--gold));
+    border:none;
+    box-shadow:0 15px 35px rgba(255,90,54,.35);
+}
+
+.primary-btn:hover{
+    box-shadow:0 20px 45px rgba(255,90,54,.5);
+    transform:translateY(-3px);
+}
+
+.resume-btn{
+    border-color:var(--coral);
+    color:var(--coral);
+}
+
+.resume-btn:hover{
+    background:linear-gradient(120deg, var(--coral), var(--gold));
+    border-color:transparent;
+    box-shadow:0 12px 28px rgba(255,90,54,.35);
+}
+
+.secondary-btn:hover{
+    background:linear-gradient(120deg, #3C2A1E, #6C4B34);
+    box-shadow:0 15px 30px rgba(60,42,30,.3);
+}
+
+/* ---- Nav active link pop ---- */
+
+.nav-links a.active{
+    color:var(--coral);
+}
+
+.nav-links a::after{
+    background:linear-gradient(90deg, var(--coral), var(--gold));
+}
+
+/* ---- Card tilt setup (JS-driven) ---- */
+
+.stat-card, .work-card, .leadership-card, .cert-card, .contact-card, .portrait-card, .about-photo-frame img{
+    transition:transform .15s ease-out, box-shadow .3s;
+    will-change:transform;
+}
+
+/* ---- Colorful glow on card hover (paired with JS tilt) ---- */
+
+.stat-card:hover{ box-shadow:0 25px 55px rgba(255,90,54,.2); }
+.work-card:hover{ box-shadow:0 25px 55px rgba(15,184,169,.18); }
+.leadership-card:hover{ box-shadow:0 25px 55px rgba(123,94,240,.18); }
+.cert-card:hover{ box-shadow:0 25px 55px rgba(242,169,59,.22); }
+.contact-card:hover{ box-shadow:0 25px 55px rgba(255,90,54,.2); }
+
+/* ---- Magnetic buttons ---- */
+
+.primary-btn, .secondary-btn, .resume-btn, .scroll-top-btn{
+    transition:transform .2s ease-out, box-shadow .3s;
+}
+
+/* ---- Skill tag pop entrance ---- */
+
+.about-tags span, .beyond-chips span{
+    transition:transform .25s, box-shadow .25s, background .25s, color .25s;
+}
+
+/* ---- Cursor glow ---- */
+
+.cursor-glow{
+    position:fixed;
+    width:340px;
+    height:340px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(255,90,54,.10), transparent 70%);
+    pointer-events:none;
+    z-index:1;
+    transform:translate(-50%, -50%);
+    transition:opacity .3s;
+    opacity:0;
+}
+
+.cursor-glow.active{
+    opacity:1;
+}
+
+@media(max-width:900px){
+    .cursor-glow{ display:none; }
+}
+
+/* ---- Scroll progress bar ---- */
+
+.scroll-progress{
+    position:fixed;
+    top:0;
+    left:0;
+    height:3px;
+    background:linear-gradient(90deg, var(--coral), var(--gold), var(--teal));
+    z-index:2000;
+    width:0%;
+}
