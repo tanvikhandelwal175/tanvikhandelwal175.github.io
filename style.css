@@ -1227,7 +1227,7 @@ section{
 ========================= */
 
 .about-grid{
-    grid-template-columns:.75fr 1.25fr .8fr;
+    grid-template-columns:.8fr 1.2fr;
 }
 
 .about-photo-col{
@@ -1646,4 +1646,47 @@ body{
     background:linear-gradient(90deg, var(--coral), var(--gold), var(--teal));
     z-index:2000;
     width:0%;
+}
+
+/* =========================
+   CUSTOM TK CURSOR
+========================= */
+
+body.custom-cursor-active,
+body.custom-cursor-active a,
+body.custom-cursor-active button{
+    cursor:none !important;
+}
+
+.tk-cursor{
+    position:fixed;
+    top:0;
+    left:0;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#3C2A1E;
+    color:#F6F0E6;
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.5px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:none;
+    z-index:3000;
+    box-shadow:0 8px 22px rgba(60,42,30,.35);
+    transition:width .25s, height .25s, background .3s, font-size .25s;
+}
+
+.tk-cursor-hover{
+    width:64px;
+    height:64px;
+    font-size:14px;
+    background:linear-gradient(120deg, var(--coral), var(--gold));
+}
+
+@media(max-width:900px){
+    .tk-cursor{ display:none; }
 }
