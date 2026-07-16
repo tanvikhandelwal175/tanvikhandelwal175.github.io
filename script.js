@@ -302,3 +302,43 @@ if(portrait){
     });
 
 }
+
+/* =========================
+   CUSTOM TK CURSOR
+========================= */
+
+if(window.matchMedia('(pointer: fine)').matches){
+
+    document.body.classList.add('custom-cursor-active');
+
+    const tkCursor = document.createElement('div');
+    tkCursor.classList.add('tk-cursor');
+    tkCursor.textContent = 'TK';
+    document.body.appendChild(tkCursor);
+
+    document.addEventListener('mousemove', (e) => {
+        tkCursor.style.left = e.clientX + 'px';
+        tkCursor.style.top = e.clientY + 'px';
+        tkCursor.style.transform = 'translate(-50%, -50%)';
+    });
+
+    const hoverTargets = document.querySelectorAll(
+        'a, button, .work-card, .stat-card, .leadership-card, .cert-card, .contact-card, .about-tags span, .beyond-chips span'
+    );
+
+    hoverTargets.forEach(el => {
+
+        el.addEventListener('mouseenter', () => tkCursor.classList.add('tk-cursor-hover'));
+        el.addEventListener('mouseleave', () => tkCursor.classList.remove('tk-cursor-hover'));
+
+    });
+
+    document.addEventListener('mouseleave', () => {
+        tkCursor.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        tkCursor.style.opacity = '1';
+    });
+
+}
