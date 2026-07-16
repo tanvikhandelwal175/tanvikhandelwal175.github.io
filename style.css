@@ -1246,6 +1246,7 @@ section{
     width:100%;
     aspect-ratio:3/4;
     object-fit:cover;
+    object-position:38% top;
     border-radius:20px;
     box-shadow:0 30px 60px rgba(60,42,30,.18);
 }
