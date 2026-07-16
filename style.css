@@ -1221,3 +1221,259 @@ section{
         display:none;
     }
 }
+
+/* =========================
+   ABOUT PHOTO
+========================= */
+
+.about-grid{
+    grid-template-columns:.75fr 1.25fr .8fr;
+}
+
+.about-photo-col{
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+}
+
+.about-photo-frame{
+    position:relative;
+    width:100%;
+    max-width:280px;
+}
+
+.about-photo-frame img{
+    width:100%;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 30px 60px rgba(60,42,30,.18);
+}
+
+.about-photo-badge{
+    position:absolute;
+    left:-18px;
+    bottom:-24px;
+    background:#fff;
+    border-radius:16px;
+    padding:16px 18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:0 20px 40px rgba(60,42,30,.18);
+    max-width:230px;
+}
+
+.about-photo-badge i{
+    font-size:20px;
+    color:var(--gold);
+}
+
+.about-photo-badge strong{
+    display:block;
+    font-family:'Playfair Display', serif;
+    font-size:15px;
+    color:#241C13;
+}
+
+.about-photo-badge span{
+    display:block;
+    font-size:10.5px;
+    color:#7B5A45;
+    line-height:1.4;
+    margin-top:2px;
+}
+
+@media(max-width:1200px){
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-photo-frame{
+        max-width:220px;
+        margin-bottom:20px;
+    }
+}
+
+/* =========================
+   MARQUEE STRIP
+========================= */
+
+.marquee-strip{
+    background:#3C2A1E;
+    overflow:hidden;
+    padding:18px 0;
+    white-space:nowrap;
+}
+
+.marquee-track{
+    display:inline-flex;
+    gap:20px;
+    animation:marqueeScroll 26s linear infinite;
+}
+
+.marquee-track span{
+    font-family:'Playfair Display', serif;
+    font-size:22px;
+    color:#E8D9C4;
+    letter-spacing:2px;
+}
+
+.marquee-track span:nth-child(odd){
+    color:var(--gold);
+    font-size:14px;
+}
+
+@keyframes marqueeScroll{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-50%); }
+}
+
+/* =========================
+   FEATURED WORK CAROUSEL
+========================= */
+
+.work-carousel{
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding-bottom:20px;
+    margin:0 -8% 0;
+    padding-left:8%;
+    padding-right:8%;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:thin;
+    scrollbar-color:#B9793E transparent;
+}
+
+.work-carousel::-webkit-scrollbar{
+    height:6px;
+}
+
+.work-carousel::-webkit-scrollbar-thumb{
+    background:#D8C3A5;
+    border-radius:10px;
+}
+
+.work-track{
+    display:flex;
+    gap:26px;
+    width:max-content;
+}
+
+.work-track .work-card{
+    width:340px;
+    flex-shrink:0;
+    scroll-snap-align:start;
+}
+
+.work-scroll-hint{
+    text-align:center;
+    margin-top:26px;
+    color:#8A7A66;
+    font-size:12.5px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+}
+
+.work-scroll-hint i{
+    color:#B9793E;
+    font-size:11px;
+}
+
+@media(max-width:768px){
+
+    .work-track .work-card{
+        width:82vw;
+    }
+}
+
+/* =========================
+   LEADERSHIP DESCRIPTIONS
+========================= */
+
+.leadership-role{
+    color:#B9793E;
+    font-size:12.5px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:12px !important;
+}
+
+.leadership-desc{
+    font-size:13px;
+    line-height:1.7;
+    color:#5A4F42;
+    text-align:left;
+}
+
+.leadership-card{
+    text-align:left;
+}
+
+.leadership-icon{
+    margin:0 0 20px;
+}
+
+/* =========================
+   SCROLL TO TOP BUTTON
+========================= */
+
+.scroll-top-btn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#3C2A1E;
+    color:#fff;
+    border:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    cursor:pointer;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(20px);
+    transition:all .35s;
+    z-index:900;
+    box-shadow:0 15px 30px rgba(60,42,30,.25);
+}
+
+.scroll-top-btn.visible{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+.scroll-top-btn:hover{
+    background:var(--coral);
+    transform:translateY(-4px);
+}
+
+/* =========================
+   PAGE FADE-IN
+========================= */
+
+body{
+    animation:pageFadeIn .9s ease;
+}
+
+@keyframes pageFadeIn{
+    from{ opacity:0; }
+    to{ opacity:1; }
+}
+
+@media(max-width:768px){
+
+    .marquee-track span{
+        font-size:16px;
+    }
+}
