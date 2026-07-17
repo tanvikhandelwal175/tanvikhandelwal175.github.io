@@ -531,7 +531,8 @@ header{
     background:#fff;
     border:1px solid rgba(60,42,30,.08);
     border-radius:20px;
-    padding:38px 30px;
+    padding:0;
+    overflow:hidden;
     position:relative;
     transition:transform .3s, box-shadow .3s;
 }
@@ -1690,4 +1691,43 @@ body.custom-cursor-active button{
 
 @media(max-width:900px){
     .tk-cursor{ display:none; }
+}
+
+/* =========================
+   FEATURED WORK: IMAGE CARDS
+========================= */
+
+.work-image{
+    width:100%;
+    aspect-ratio:4/3;
+    overflow:hidden;
+    background:#F0E7D8;
+}
+
+.work-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+}
+
+.work-card:hover .work-image img{
+    transform:scale(1.06);
+}
+
+.work-body{
+    padding:28px 26px 32px;
+}
+
+.work-body .work-index{
+    margin-bottom:8px;
+}
+
+.work-body h3{
+    font-size:19px;
+    line-height:1.35;
+}
+
+.work-body p{
+    font-size:13.5px;
 }
