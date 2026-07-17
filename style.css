@@ -1731,3 +1731,18 @@ body.custom-cursor-active button{
 .work-body p{
     font-size:13.5px;
 }
+
+/* =========================
+   ABOUT RESUME BUTTON
+========================= */
+
+.about-resume-btn{
+    display:inline-flex;
+    margin-top:32px;
+}
+
+@media(max-width:768px){
+    .about-resume-btn{
+        margin-top:24px;
+    }
+}
