@@ -1746,3 +1746,151 @@ body.custom-cursor-active button{
         margin-top:24px;
     }
 }
+
+/* =========================
+   WORK LINK AS BUTTON (posts with no external link)
+========================= */
+
+button.work-link{
+    background:none;
+    border:none;
+    font-family:'Poppins', sans-serif;
+    cursor:pointer;
+}
+
+/* =========================
+   WORK MODAL (internal "Read More")
+========================= */
+
+.work-modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(36,28,19,.78);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:5000;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .3s;
+    padding:24px;
+}
+
+.work-modal-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.work-modal-box{
+    background:#FBF7F0;
+    border-radius:24px;
+    max-width:720px;
+    width:100%;
+    max-height:85vh;
+    position:relative;
+    box-shadow:0 40px 90px rgba(0,0,0,.4);
+}
+
+.work-modal-close{
+    position:absolute;
+    top:16px;
+    right:16px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:#3C2A1E;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    transition:background .25s;
+}
+
+.work-modal-close:hover{
+    background:var(--coral);
+}
+
+.work-modal-scroll{
+    overflow-y:auto;
+    max-height:85vh;
+    padding:36px;
+    border-radius:24px;
+}
+
+.work-modal-img{
+    width:100%;
+    border-radius:14px;
+    margin-bottom:18px;
+    display:block;
+}
+
+.work-modal-category{
+    display:inline-block;
+    color:var(--coral);
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-weight:600;
+    margin-bottom:14px;
+}
+
+.work-modal-scroll h3{
+    font-family:'Playfair Display', serif;
+    font-size:23px;
+    color:#241C13;
+    margin-bottom:18px;
+    line-height:1.35;
+}
+
+.work-modal-scroll p{
+    font-size:14.5px;
+    line-height:1.8;
+    color:#5A4F42;
+    margin-bottom:16px;
+}
+
+.work-modal-list{
+    list-style:none;
+    margin-bottom:16px;
+}
+
+.work-modal-list li{
+    font-size:14px;
+    line-height:1.75;
+    color:#5A4F42;
+    padding-left:24px;
+    position:relative;
+    margin-bottom:16px;
+}
+
+.work-modal-list li::before{
+    content:"🔹";
+    position:absolute;
+    left:0;
+    top:0;
+    font-size:12px;
+}
+
+.work-modal-question{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:16.5px;
+    color:#3C2A1E;
+    border-left:3px solid var(--coral);
+    padding-left:16px;
+}
+
+@media(max-width:600px){
+
+    .work-modal-scroll{
+        padding:26px 22px;
+    }
+
+    .work-modal-scroll h3{
+        font-size:19px;
+    }
+}
