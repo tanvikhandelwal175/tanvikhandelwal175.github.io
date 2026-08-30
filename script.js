@@ -342,3 +342,55 @@ if(window.matchMedia('(pointer: fine)').matches){
     });
 
 }
+
+/* =========================
+   WORK MODAL (internal "Read More" for posts with no external link)
+========================= */
+
+const workModalOverlay = document.getElementById('workModalOverlay');
+const workModalContent = document.getElementById('workModalContent');
+const workModalClose = document.getElementById('workModalClose');
+
+function openWorkModal(templateId){
+
+    const template = document.getElementById(templateId);
+    if(!template || !workModalOverlay || !workModalContent) return;
+
+    workModalContent.innerHTML = template.innerHTML;
+    workModalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+}
+
+function closeWorkModal(){
+
+    if(!workModalOverlay) return;
+
+    workModalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+
+}
+
+document.querySelectorAll('.work-modal-trigger').forEach(btn => {
+
+    btn.addEventListener('click', () => {
+        openWorkModal(btn.getAttribute('data-modal-target'));
+    });
+
+});
+
+if(workModalClose){
+    workModalClose.addEventListener('click', closeWorkModal);
+}
+
+if(workModalOverlay){
+
+    workModalOverlay.addEventListener('click', (e) => {
+        if(e.target === workModalOverlay) closeWorkModal();
+    });
+
+}
+
+document.addEventListener('keydown', (e) => {
+    if(e.key === 'Escape') closeWorkModal();
+});
