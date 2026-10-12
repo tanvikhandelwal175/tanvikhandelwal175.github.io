@@ -394,3 +394,33 @@ if(workModalOverlay){
 document.addEventListener('keydown', (e) => {
     if(e.key === 'Escape') closeWorkModal();
 });
+
+/* =========================
+   WONDERLAND: FLOATING CARD SUITS IN THE HERO
+========================= */
+
+(function spawnSuits(){
+
+    const hero = document.querySelector('.hero');
+    if(!hero) return;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const suits  = ['\u2665', '\u2660', '\u2666', '\u2663'];
+    const colors = ['#C72C41', '#1B1822', '#C72C41', '#1B1822'];
+    const count  = window.innerWidth < 768 ? 7 : 14;
+
+    for(let i = 0; i < count; i++){
+
+        const s = document.createElement('span');
+        s.className = 'suit-float';
+        s.textContent = suits[i % 4];
+        s.style.left = (4 + Math.random() * 92) + '%';
+        s.style.fontSize = (16 + Math.random() * 26) + 'px';
+        s.style.color = colors[i % 4];
+        s.style.animationDuration = (14 + Math.random() * 14) + 's';
+        s.style.animationDelay = (-Math.random() * 20) + 's';
+        hero.appendChild(s);
+
+    }
+
+})();
