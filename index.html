@@ -5,16 +5,18 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101B1B">
 
     <title>Tanvi Khandelwal | Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="wonderland-home.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Caveat:wght@500;700&family=Cinzel:wght@500;600;700&family=IM+Fell+English:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet"
@@ -68,90 +70,191 @@ Resume
 
 </header>
 
-<!-- ================= HERO ================= -->
+<!-- ================= HERO: DARK WONDERLAND (Phase 1) ================= -->
 
-<section class="hero" id="home">
+<section class="wl-hero" id="home" aria-label="Welcome to my Wonderland">
 
-<div class="blob blob-coral"></div>
-<div class="blob blob-teal"></div>
-<div class="blob blob-indigo"></div>
+<svg class="wl-defs" width="0" height="0" aria-hidden="true" focusable="false">
+<defs>
+<filter id="wlTorn" x="-6%" y="-4%" width="112%" height="108%">
+<feTurbulence type="fractalNoise" baseFrequency=".022 .03" numOctaves="3" seed="6" result="n"/>
+<feDisplacementMap in="SourceGraphic" in2="n" scale="16" xChannelSelector="R" yChannelSelector="G"/>
+</filter>
+<linearGradient id="wlGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc96"/><stop offset=".5" stop-color="#c99a45"/><stop offset="1" stop-color="#7a5316"/></linearGradient>
+<radialGradient id="wlFace" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#fbf1d6"/><stop offset=".7" stop-color="#e9dcc1"/><stop offset="1" stop-color="#c8b78d"/></radialGradient>
+<radialGradient id="wlGlass" cx=".5" cy=".62" r=".6"><stop offset="0" stop-color="#fff6c8"/><stop offset=".35" stop-color="#ffcb6a"/><stop offset=".75" stop-color="#b8651f"/><stop offset="1" stop-color="#4a2410"/></radialGradient>
+<radialGradient id="wlBrass" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#fff0b8"/><stop offset=".35" stop-color="#d9a84a"/><stop offset=".8" stop-color="#8a5a1c"/><stop offset="1" stop-color="#4a2e0c"/></radialGradient>
+<path id="wlArc" d="M 12 84 Q 240 -4 468 66"/>
 
-<div class="hero-left">
+<symbol id="wlWatch" viewBox="0 0 120 190">
+<g fill="none" stroke="#b38a3c" stroke-width="3.4"><ellipse cx="60" cy="8" rx="5" ry="8"/><ellipse cx="60" cy="24" rx="5" ry="8"/><ellipse cx="60" cy="40" rx="5" ry="8"/></g>
+<circle cx="60" cy="58" r="11" fill="none" stroke="url(#wlGold)" stroke-width="5"/>
+<rect x="53" y="64" width="14" height="12" rx="3" fill="url(#wlGold)" stroke="#6b4a14" stroke-width="1.5"/>
+<circle cx="60" cy="128" r="54" fill="url(#wlGold)" stroke="#5a3d10" stroke-width="2.5"/>
+<circle cx="60" cy="128" r="47" fill="#3a2a10"/>
+<circle cx="60" cy="128" r="44.5" fill="url(#wlFace)"/>
+<line x1="60.0" y1="88.0" x2="60.0" y2="84.0" stroke="#2a1c10" stroke-width="1.1"/><line x1="64.3" y1="86.7" x2="64.6" y2="84.2" stroke="#2a1c10" stroke-width="0.6"/><line x1="68.6" y1="87.4" x2="69.1" y2="85.0" stroke="#2a1c10" stroke-width="0.6"/><line x1="72.8" y1="88.5" x2="73.6" y2="86.2" stroke="#2a1c10" stroke-width="0.6"/><line x1="76.9" y1="90.1" x2="77.9" y2="87.8" stroke="#2a1c10" stroke-width="0.6"/><line x1="80.0" y1="93.4" x2="82.0" y2="89.9" stroke="#2a1c10" stroke-width="1.1"/><line x1="84.4" y1="94.4" x2="85.9" y2="92.4" stroke="#2a1c10" stroke-width="0.6"/><line x1="87.8" y1="97.2" x2="89.4" y2="95.3" stroke="#2a1c10" stroke-width="0.6"/><line x1="90.8" y1="100.2" x2="92.7" y2="98.6" stroke="#2a1c10" stroke-width="0.6"/><line x1="93.6" y1="103.6" x2="95.6" y2="102.1" stroke="#2a1c10" stroke-width="0.6"/><line x1="94.6" y1="108.0" x2="98.1" y2="106.0" stroke="#2a1c10" stroke-width="1.1"/><line x1="97.9" y1="111.1" x2="100.2" y2="110.1" stroke="#2a1c10" stroke-width="0.6"/><line x1="99.5" y1="115.2" x2="101.8" y2="114.4" stroke="#2a1c10" stroke-width="0.6"/><line x1="100.6" y1="119.4" x2="103.0" y2="118.9" stroke="#2a1c10" stroke-width="0.6"/><line x1="101.3" y1="123.7" x2="103.8" y2="123.4" stroke="#2a1c10" stroke-width="0.6"/><line x1="100.0" y1="128.0" x2="104.0" y2="128.0" stroke="#2a1c10" stroke-width="1.1"/><line x1="101.3" y1="132.3" x2="103.8" y2="132.6" stroke="#2a1c10" stroke-width="0.6"/><line x1="100.6" y1="136.6" x2="103.0" y2="137.1" stroke="#2a1c10" stroke-width="0.6"/><line x1="99.5" y1="140.8" x2="101.8" y2="141.6" stroke="#2a1c10" stroke-width="0.6"/><line x1="97.9" y1="144.9" x2="100.2" y2="145.9" stroke="#2a1c10" stroke-width="0.6"/><line x1="94.6" y1="148.0" x2="98.1" y2="150.0" stroke="#2a1c10" stroke-width="1.1"/><line x1="93.6" y1="152.4" x2="95.6" y2="153.9" stroke="#2a1c10" stroke-width="0.6"/><line x1="90.8" y1="155.8" x2="92.7" y2="157.4" stroke="#2a1c10" stroke-width="0.6"/><line x1="87.8" y1="158.8" x2="89.4" y2="160.7" stroke="#2a1c10" stroke-width="0.6"/><line x1="84.4" y1="161.6" x2="85.9" y2="163.6" stroke="#2a1c10" stroke-width="0.6"/><line x1="80.0" y1="162.6" x2="82.0" y2="166.1" stroke="#2a1c10" stroke-width="1.1"/><line x1="76.9" y1="165.9" x2="77.9" y2="168.2" stroke="#2a1c10" stroke-width="0.6"/><line x1="72.8" y1="167.5" x2="73.6" y2="169.8" stroke="#2a1c10" stroke-width="0.6"/><line x1="68.6" y1="168.6" x2="69.1" y2="171.0" stroke="#2a1c10" stroke-width="0.6"/><line x1="64.3" y1="169.3" x2="64.6" y2="171.8" stroke="#2a1c10" stroke-width="0.6"/><line x1="60.0" y1="168.0" x2="60.0" y2="172.0" stroke="#2a1c10" stroke-width="1.1"/><line x1="55.7" y1="169.3" x2="55.4" y2="171.8" stroke="#2a1c10" stroke-width="0.6"/><line x1="51.4" y1="168.6" x2="50.9" y2="171.0" stroke="#2a1c10" stroke-width="0.6"/><line x1="47.2" y1="167.5" x2="46.4" y2="169.8" stroke="#2a1c10" stroke-width="0.6"/><line x1="43.1" y1="165.9" x2="42.1" y2="168.2" stroke="#2a1c10" stroke-width="0.6"/><line x1="40.0" y1="162.6" x2="38.0" y2="166.1" stroke="#2a1c10" stroke-width="1.1"/><line x1="35.6" y1="161.6" x2="34.1" y2="163.6" stroke="#2a1c10" stroke-width="0.6"/><line x1="32.2" y1="158.8" x2="30.6" y2="160.7" stroke="#2a1c10" stroke-width="0.6"/><line x1="29.2" y1="155.8" x2="27.3" y2="157.4" stroke="#2a1c10" stroke-width="0.6"/><line x1="26.4" y1="152.4" x2="24.4" y2="153.9" stroke="#2a1c10" stroke-width="0.6"/><line x1="25.4" y1="148.0" x2="21.9" y2="150.0" stroke="#2a1c10" stroke-width="1.1"/><line x1="22.1" y1="144.9" x2="19.8" y2="145.9" stroke="#2a1c10" stroke-width="0.6"/><line x1="20.5" y1="140.8" x2="18.2" y2="141.6" stroke="#2a1c10" stroke-width="0.6"/><line x1="19.4" y1="136.6" x2="17.0" y2="137.1" stroke="#2a1c10" stroke-width="0.6"/><line x1="18.7" y1="132.3" x2="16.2" y2="132.6" stroke="#2a1c10" stroke-width="0.6"/><line x1="20.0" y1="128.0" x2="16.0" y2="128.0" stroke="#2a1c10" stroke-width="1.1"/><line x1="18.7" y1="123.7" x2="16.2" y2="123.4" stroke="#2a1c10" stroke-width="0.6"/><line x1="19.4" y1="119.4" x2="17.0" y2="118.9" stroke="#2a1c10" stroke-width="0.6"/><line x1="20.5" y1="115.2" x2="18.2" y2="114.4" stroke="#2a1c10" stroke-width="0.6"/><line x1="22.1" y1="111.1" x2="19.8" y2="110.1" stroke="#2a1c10" stroke-width="0.6"/><line x1="25.4" y1="108.0" x2="21.9" y2="106.0" stroke="#2a1c10" stroke-width="1.1"/><line x1="26.4" y1="103.6" x2="24.4" y2="102.1" stroke="#2a1c10" stroke-width="0.6"/><line x1="29.2" y1="100.2" x2="27.3" y2="98.6" stroke="#2a1c10" stroke-width="0.6"/><line x1="32.2" y1="97.2" x2="30.6" y2="95.3" stroke="#2a1c10" stroke-width="0.6"/><line x1="35.6" y1="94.4" x2="34.1" y2="92.4" stroke="#2a1c10" stroke-width="0.6"/><line x1="40.0" y1="93.4" x2="38.0" y2="89.9" stroke="#2a1c10" stroke-width="1.1"/><line x1="43.1" y1="90.1" x2="42.1" y2="87.8" stroke="#2a1c10" stroke-width="0.6"/><line x1="47.2" y1="88.5" x2="46.4" y2="86.2" stroke="#2a1c10" stroke-width="0.6"/><line x1="51.4" y1="87.4" x2="50.9" y2="85.0" stroke="#2a1c10" stroke-width="0.6"/><line x1="55.7" y1="86.7" x2="55.4" y2="84.2" stroke="#2a1c10" stroke-width="0.6"/><text x="60.0" y="94.0" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="9.5" fill="#2a1c10">XII</text><text x="77.0" y="98.6" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="8" fill="#2a1c10">I</text><text x="89.4" y="111.0" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="8" fill="#2a1c10">II</text><text x="94.0" y="128.0" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="9.5" fill="#2a1c10">III</text><text x="89.4" y="145.0" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="8" fill="#2a1c10">IV</text><text x="77.0" y="157.4" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="8" fill="#2a1c10">V</text><text x="60.0" y="162.0" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="9.5" fill="#2a1c10">VI</text><text x="43.0" y="157.4" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="8" fill="#2a1c10">VII</text><text x="30.6" y="145.0" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="8" fill="#2a1c10">VIII</text><text x="26.0" y="128.0" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="9.5" fill="#2a1c10">IX</text><text x="30.6" y="111.0" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="8" fill="#2a1c10">X</text><text x="43.0" y="98.6" text-anchor="middle" dominant-baseline="central" font-family="'IM Fell English',Georgia,serif" font-size="8" fill="#2a1c10">XI</text>
+<g transform="translate(60 128)">
+<path class="wl-hand wl-h-hour" d="M-2.4 5L0 -22L2.4 5Z" fill="#2a1c10"/>
+<path class="wl-hand wl-h-min" d="M-1.6 5L0 -33L1.6 5Z" fill="#2a1c10"/>
+<path class="wl-hand wl-h-sec" d="M-.7 8L0 -37L.7 8Z" fill="#9c1f38"/>
+</g>
+<circle cx="60" cy="128" r="3.4" fill="#7a1e35" stroke="#2a1008" stroke-width="1"/>
+<path d="M22 108A44 44 0 0 1 68 84" stroke="rgba(255,255,255,.4)" fill="none" stroke-width="3" stroke-linecap="round"/>
+</symbol>
 
-<p class="hero-tag">
+<symbol id="wlLantern" viewBox="0 0 100 200">
+<circle cx="50" cy="9" r="7" fill="none" stroke="#6b4a1c" stroke-width="3.4"/>
+<path d="M50 16V24" stroke="#6b4a1c" stroke-width="3.4"/>
+<path d="M30 44L38 24H62L70 44Z" fill="#2a1a0c" stroke="#8a5f24" stroke-width="2.2"/>
+<ellipse cx="50" cy="24" rx="12" ry="4" fill="#4a3014"/>
+<rect x="26" y="44" width="48" height="108" rx="9" fill="url(#wlGlass)" stroke="#3a2410" stroke-width="2.8"/>
+<g stroke="#2a1a0c" stroke-width="3"><path d="M26 44V152M50 44V152M74 44V152"/></g>
+<path class="wl-flame" d="M50 128C39 112 45 100 50 86C55 100 61 112 50 128Z" fill="#fff7d0"/>
+<path d="M50 122C45 114 48 108 50 100C52 108 55 114 50 122Z" fill="#ffd36e"/>
+<path d="M22 152H78L70 178H30Z" fill="#2a1a0c" stroke="#8a5f24" stroke-width="2.2"/>
+<path d="M34 178H66L62 192H38Z" fill="#4a3014" stroke="#8a5f24" stroke-width="2"/>
+</symbol>
+</defs>
+</svg>
 
-MARKETING • FINANCE • STRATEGY
+<div class="wl-stage" id="wlStage">
 
+<div class="wl-layer" data-depth=".08" data-zoom=".25">
+<img class="wl-far" src="images/wl/forest-far.svg" alt="" decoding="async">
+</div>
+
+<div class="wl-atmos" aria-hidden="true">
+<i class="wl-glow"></i>
+<span class="wl-beam b1"></span><span class="wl-beam b2"></span><span class="wl-beam b3"></span>
+<i class="wl-fog f1"></i>
+</div>
+
+<div class="wl-layer" data-depth=".2" data-zoom=".7">
+<div class="wl-floor"></div>
+</div>
+
+<!-- ============ THE MYSTERIOUS DOOR (right) ============ -->
+<div class="wl-layer wl-layer-door" data-depth=".45" data-zoom="1">
+
+<div class="wl-door-wrap" id="wlDoorWrap">
+<img class="wl-door-scene" src="images/wl/door-scene.webp" alt="" decoding="async">
+<i class="wl-door-halo" aria-hidden="true"></i>
+<div class="wl-door-stage">
+<button type="button" class="wl-door" id="wlDoor" data-door-target="#about" aria-label="Open the mysterious door and step through to the About section">
+<span class="wl-door-in">
+<img src="images/wl/door-interior.svg" alt="" decoding="async">
+<i class="wl-mist"></i><i class="wl-mist wl-mist2"></i><i class="wl-motes"></i>
+</span>
+<span class="wl-door-leaf">
+<img src="images/wl/door-leaf.webp" alt="" decoding="async">
+<i class="wl-medal"></i>
+<svg class="wl-knob" viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="27" fill="url(#wlBrass)" stroke="#3a240a" stroke-width="2"/><circle cx="30" cy="30" r="19" fill="none" stroke="#5a3a10" stroke-width="1.6"/><path d="M30 30m0 0c0-5 6-5 6 0s-9 8-12 0s6-14 15-8" fill="none" stroke="#4a2e0c" stroke-width="1.8" stroke-linecap="round"/><path d="M46 28c5-1 8 2 6 6" fill="none" stroke="#5a3a10" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="22" cy="20" rx="7" ry="4" transform="rotate(-35 22 20)" fill="rgba(255,255,230,.55)"/></svg>
+</span>
+<i class="wl-door-leak" aria-hidden="true"></i>
+</button>
+</div>
+<span class="wl-door-sill" aria-hidden="true"></span>
+<span class="wl-door-label" aria-hidden="true">Discover my story</span>
+</div>
+
+<img class="wl-prop wl-mush-b" src="images/wl/mushrooms-b.svg" alt="" decoding="async">
+
+</div>
+
+<!-- ============ TREES, SIGNPOSTS, ROSES, MUSHROOMS (mid-foreground) ============ -->
+<div class="wl-layer" data-depth=".75" data-zoom="1.45">
+
+<div class="wl-tree wl-tree-left">
+<img class="wl-tr" src="images/wl/tree-left-trunk.svg" alt="" decoding="async">
+<div class="wl-canopy" style="--sway:12s">
+<img class="wl-tr" src="images/wl/tree-left-canopy.svg" alt="" decoding="async">
+<img class="wl-vine" style="left:25%;top:11%;width:8.5%;--d:7.5s;--dl:-1s" src="images/wl/vine-1.svg" alt="" loading="lazy">
+<img class="wl-vine" style="left:36%;top:9%;width:7%;--d:9s;--dl:-3s" src="images/wl/vine-2.svg" alt="" loading="lazy">
+<img class="wl-vine" style="left:58%;top:8.5%;width:8%;--d:8s;--dl:-2s" src="images/wl/vine-3.svg" alt="" loading="lazy">
+<img class="wl-vine" style="left:67%;top:11%;width:7%;--d:10s;--dl:-5s" src="images/wl/vine-2.svg" alt="" loading="lazy">
+<div class="wl-hang wl-hang-watch" style="left:45.5%;top:10.5%;--pd:7s;--pdl:-2s">
+<svg viewBox="0 0 120 190" aria-hidden="true"><use href="#wlWatch"/></svg>
+</div>
+<div class="wl-hang wl-hang-lantern" style="left:70.5%;top:12%;--pd:6s;--pdl:-4s">
+<i class="wl-halo"></i>
+<svg viewBox="0 0 100 200" aria-hidden="true"><use href="#wlLantern"/></svg>
+</div>
+</div>
+</div>
+
+<nav class="wl-signs" aria-label="Signposts to portfolio sections">
+<span class="wl-pole" aria-hidden="true"></span>
+<div class="wl-sign-wrap s1" style="--rot:-6deg;--sd:6.5s;--sdl:-1s"><button type="button" class="wl-sign" data-door-open>This way</button></div>
+<div class="wl-sign-wrap s2" style="--rot:4deg;--sd:7.5s;--sdl:-3s"><a class="wl-sign" href="#projects">Projects</a></div>
+<div class="wl-sign-wrap s3" style="--rot:-3deg;--sd:8s;--sdl:-5s"><a class="wl-sign" href="#experience">Experience</a></div>
+<div class="wl-sign-wrap s4" style="--rot:5deg;--sd:7s;--sdl:-2s"><a class="wl-sign" href="#leadership">Leadership</a></div>
+</nav>
+
+<div class="wl-tree wl-tree-right">
+<img class="wl-tr" src="images/wl/tree-right-trunk.svg" alt="" decoding="async">
+<div class="wl-canopy wl-canopy-r" style="--sway:13.5s">
+<img class="wl-tr" src="images/wl/tree-right-canopy.svg" alt="" decoding="async">
+<img class="wl-vine" style="left:40%;top:10%;width:8%;--d:8.5s;--dl:-2s" src="images/wl/vine-3.svg" alt="" loading="lazy">
+<img class="wl-vine" style="left:55%;top:9%;width:7%;--d:7s;--dl:-4s" src="images/wl/vine-1.svg" alt="" loading="lazy">
+<div class="wl-hang wl-hang-lantern wl-hang-r1" style="left:21%;top:13%;--pd:6.5s;--pdl:-1s">
+<i class="wl-halo"></i>
+<svg viewBox="0 0 100 200" aria-hidden="true"><use href="#wlLantern"/></svg>
+</div>
+<div class="wl-hang wl-hang-watch wl-hang-small" style="left:50%;top:11%;--pd:8s;--pdl:-6s">
+<svg viewBox="0 0 120 190" aria-hidden="true"><use href="#wlWatch"/></svg>
+</div>
+</div>
+</div>
+
+<img class="wl-prop wl-roses-a" src="images/wl/roses-a.svg" alt="" decoding="async">
+<img class="wl-prop wl-mush-a" src="images/wl/mushrooms-a.svg" alt="" decoding="async">
+<img class="wl-prop wl-roses-b" src="images/wl/roses-b.svg" alt="" decoding="async">
+<img class="wl-prop wl-books" src="images/wl/books.svg" alt="" decoding="async">
+
+<div class="wl-note"><p>A little<br>curiosity,</p><p>a lot of<br>possibilities</p><span class="wl-note-heart" aria-hidden="true">&#9829;</span></div>
+
+</div>
+
+<div class="wl-atmos wl-atmos-front" aria-hidden="true"><i class="wl-fog f2"></i><i class="wl-fog f3"></i></div>
+
+<!-- ============ FOREGROUND + FLOATING CARDS ============ -->
+<div class="wl-layer" data-depth="1.15" data-zoom="2.1" aria-hidden="true">
+<img class="wl-fg wl-fg-l" src="images/wl/fg-left.svg" alt="" decoding="async">
+<img class="wl-fg wl-fg-r" src="images/wl/fg-right.svg" alt="" decoding="async">
+<span class="wl-card c1"><img src="images/wl/card-a.svg" alt="" loading="lazy"></span>
+<span class="wl-card c2"><img src="images/wl/card-k.svg" alt="" loading="lazy"></span>
+<span class="wl-card c3"><img src="images/wl/card-q.svg" alt="" loading="lazy"></span>
+<span class="wl-card c4"><img src="images/wl/card-back.svg" alt="" loading="lazy"></span>
+<span class="wl-card c5"><img src="images/wl/card-j.svg" alt="" loading="lazy"></span>
+</div>
+
+</div>
+
+<canvas class="wl-canvas" id="wlCanvas" aria-hidden="true"></canvas>
+<div class="wl-vignette" aria-hidden="true"></div>
+
+<!-- ============ THE CENTRE: WELCOME PANEL ============ -->
+<div class="wl-panel" id="wlPanel">
+<div class="wl-paper" aria-hidden="true"></div>
+<div class="wl-panel-inner">
+<p class="wl-welcome">
+<svg viewBox="0 0 480 100" role="img" aria-label="Welcome to my Wonderland">
+<text font-family="Caveat, cursive" font-weight="700" font-size="42" fill="#1c1a22"><textPath href="#wlArc" startOffset="50%" text-anchor="middle">Welcome to my <tspan fill="#9c1f38">Wonderland</tspan></textPath></text>
+</svg>
 </p>
-
-<h1>
-
-Tanvi
-
-<br>
-
-Khandelwal
-
-</h1>
-
-<h2>
-
-PGDM Candidate | IMT Hyderabad
-
-</h2>
-
-<p class="hero-description">
-
-Building brands, solving business problems,
-and creating meaningful customer experiences
-through marketing strategy, finance,
-and data-driven decision making.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="https://www.linkedin.com/in/tanvi-khandelwal-105405252/"
-
-target="_blank"
-
-class="secondary-btn">
-
-<i class="fa-brands fa-linkedin"></i>
-
-LinkedIn
-
-</a>
-
+<h1 class="wl-name"><span class="wl-ln l1">Tanvi</span><span class="wl-ln l2">Khandelwal</span></h1>
+<p class="wl-role">PGDM Candidate | IMT Hyderabad</p>
+<p class="wl-tag">Marketing &middot; Finance &middot; Strategy</p>
+<p class="wl-intro">Building brands, solving business problems, and creating meaningful customer experiences through marketing strategy, finance, and data-driven decision-making.</p>
+<div class="wl-cta">
+<a class="wl-btn wl-btn-primary" href="#about"><span>Explore My World</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+<a class="wl-btn wl-btn-ghost" href="https://www.linkedin.com/in/tanvi-khandelwal-105405252/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+</div>
+</div>
 </div>
 
-<div class="scroll-indicator">
-
-<span>↓</span>
-
-<p>Scroll to Explore</p>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<div class="background-text">
-
-TK
-
-</div>
-
-<div class="portrait-card">
-
-<img src="images/portrait.jpeg"
-
-alt="Tanvi Khandelwal">
-
-</div>
-
-</div>
+<button type="button" class="wl-calm" id="wlCalm" aria-pressed="false"><span aria-hidden="true">&#10022;</span> <b>Ambient motion: on</b></button>
 
 </section>
 
@@ -1163,6 +1266,7 @@ Download Resume
 </template>
 
 <script src="script.js"></script>
+<script src="wonderland-home.js"></script>
 
 </body>
 </html>
