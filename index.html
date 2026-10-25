@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="wonderland-home.css">
+    <link rel="stylesheet" href="wonderland-app.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,41 +25,17 @@
 
 </head>
 
-<body>
+<body class="wl-app">
 
 <!-- ================= NAVBAR ================= -->
 
 <header>
 
-<nav class="navbar">
+<nav class="navbar" aria-label="Site">
 
-<div class="logo">
+<a class="logo" href="#home" aria-label="Tanvi Khandelwal - back to the entrance">TK</a>
 
-TK
-
-</div>
-
-<ul class="nav-links">
-
-<li><a href="#home" class="active">Home</a></li>
-
-<li><a href="#about">About</a></li>
-
-<li><a href="#projects">Projects</a></li>
-
-<li><a href="#experience">Experience</a></li>
-
-<li><a href="#leadership">Leadership</a></li>
-
-<li><a href="#certifications">Certifications</a></li>
-
-<li><a href="#insights">Insights</a></li>
-
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-<a href="resume.pdf" target="_blank" class="resume-btn">
+<a href="resume.pdf" target="_blank" rel="noopener" class="resume-btn">
 
 <i class="fa-solid fa-download"></i>
 
@@ -72,7 +49,9 @@ Resume
 
 <!-- ================= HERO: DARK WONDERLAND (Phase 1) ================= -->
 
-<section class="wl-hero" id="home" aria-label="Welcome to my Wonderland">
+<main class="wl-views" id="wlViews">
+
+<section class="wl-hero wl-view is-active" id="home" data-title="Welcome" aria-label="Welcome to my Wonderland">
 
 <svg class="wl-defs" width="0" height="0" aria-hidden="true" focusable="false">
 <defs>
@@ -141,7 +120,7 @@ Resume
 <img class="wl-door-scene" src="images/wl/door-scene.webp" alt="" decoding="async">
 <i class="wl-door-halo" aria-hidden="true"></i>
 <div class="wl-door-stage">
-<button type="button" class="wl-door" id="wlDoor" data-door-target="#about" aria-label="Open the mysterious door and step through to the About section">
+<button type="button" class="wl-door" id="wlDoor" data-door-target="hub" aria-label="Open the mysterious door and choose where to go">
 <span class="wl-door-in">
 <img src="images/wl/door-interior.svg" alt="" decoding="async">
 <i class="wl-mist"></i><i class="wl-mist wl-mist2"></i><i class="wl-motes"></i>
@@ -155,7 +134,6 @@ Resume
 </button>
 </div>
 <span class="wl-door-sill" aria-hidden="true"></span>
-<span class="wl-door-label" aria-hidden="true">Discover my story</span>
 </div>
 
 <img class="wl-prop wl-mush-b" src="images/wl/mushrooms-b.svg" alt="" decoding="async">
@@ -173,7 +151,7 @@ Resume
 <img class="wl-vine" style="left:36%;top:9%;width:7%;--d:9s;--dl:-3s" src="images/wl/vine-2.svg" alt="" loading="lazy">
 <img class="wl-vine" style="left:58%;top:8.5%;width:8%;--d:8s;--dl:-2s" src="images/wl/vine-3.svg" alt="" loading="lazy">
 <img class="wl-vine" style="left:67%;top:11%;width:7%;--d:10s;--dl:-5s" src="images/wl/vine-2.svg" alt="" loading="lazy">
-<div class="wl-hang wl-hang-watch" style="left:45.5%;top:10.5%;--pd:7s;--pdl:-2s">
+<div class="wl-hang wl-hang-watch" style="left:54%;top:10.5%;--pd:7s;--pdl:-2s">
 <svg viewBox="0 0 120 190" aria-hidden="true"><use href="#wlWatch"/></svg>
 </div>
 <div class="wl-hang wl-hang-lantern" style="left:70.5%;top:12%;--pd:6s;--pdl:-4s">
@@ -183,12 +161,15 @@ Resume
 </div>
 </div>
 
-<nav class="wl-signs" aria-label="Signposts to portfolio sections">
+<nav class="wl-signs" aria-label="Signposts to every part of the portfolio">
 <span class="wl-pole" aria-hidden="true"></span>
 <div class="wl-sign-wrap s1" style="--rot:-6deg;--sd:6.5s;--sdl:-1s"><button type="button" class="wl-sign" data-door-open>This way</button></div>
-<div class="wl-sign-wrap s2" style="--rot:4deg;--sd:7.5s;--sdl:-3s"><a class="wl-sign" href="#projects">Projects</a></div>
-<div class="wl-sign-wrap s3" style="--rot:-3deg;--sd:8s;--sdl:-5s"><a class="wl-sign" href="#experience">Experience</a></div>
-<div class="wl-sign-wrap s4" style="--rot:5deg;--sd:7s;--sdl:-2s"><a class="wl-sign" href="#leadership">Leadership</a></div>
+<div class="wl-sign-wrap s2" style="--rot:4deg;--sd:7.5s;--sdl:-3s"><a class="wl-sign" href="#about">About</a></div>
+<div class="wl-sign-wrap s3" style="--rot:-3deg;--sd:8s;--sdl:-5s"><a class="wl-sign" href="#projects">Projects</a></div>
+<div class="wl-sign-wrap s4" style="--rot:5deg;--sd:7s;--sdl:-2s"><a class="wl-sign" href="#experience">Experience</a></div>
+<div class="wl-sign-wrap s5" style="--rot:-4deg;--sd:8.5s;--sdl:-6s"><a class="wl-sign" href="#leadership">Leadership</a></div>
+<div class="wl-sign-wrap s6" style="--rot:3deg;--sd:7.2s;--sdl:-4s"><a class="wl-sign" href="#certifications">Certifications</a></div>
+<div class="wl-sign-wrap s7" style="--rot:-5deg;--sd:6.8s;--sdl:-7s"><a class="wl-sign" href="#contact">Contact</a></div>
 </nav>
 
 <div class="wl-tree wl-tree-right">
@@ -248,7 +229,7 @@ Resume
 <p class="wl-tag">Marketing &middot; Finance &middot; Strategy</p>
 <p class="wl-intro">Building brands, solving business problems, and creating meaningful customer experiences through marketing strategy, finance, and data-driven decision-making.</p>
 <div class="wl-cta">
-<a class="wl-btn wl-btn-primary" href="#about"><span>Explore My World</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+<a class="wl-btn wl-btn-primary" href="#hub" data-door-open><span>Explore My World</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
 <a class="wl-btn wl-btn-ghost" href="https://www.linkedin.com/in/tanvi-khandelwal-105405252/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
 </div>
 </div>
@@ -258,15 +239,79 @@ Resume
 
 </section>
 
+<!-- ================= HUB: THE SIX CARDS (inside the door) ================= -->
+
+<section class="wl-hub wl-view" id="hub" data-title="Choose your path" aria-label="Choose your path">
+
+<div class="wl-hub-head">
+<p class="section-tag">Through the door</p>
+<h2 class="wl-hub-title">Choose Your Path</h2>
+<p class="wl-hub-sub">Every path leads to a new discovery.</p>
+</div>
+
+<nav class="wl-hand" aria-label="Portfolio sections">
+<a class="hub-card" href="#about" style="--i:0;--tilt:-12deg;--dy:22px;--suit:#9c1f38">
+<span class="hc-corner" aria-hidden="true">A<br>&#9829;</span>
+<span class="hc-corner br" aria-hidden="true">A<br>&#9829;</span>
+<span class="hc-icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span>
+<strong class="hc-title">About Me</strong>
+<em class="hc-sub">Down the rabbit hole</em>
+<span class="hc-hint">My story, skills &amp; interests</span>
+</a>
+<a class="hub-card" href="#projects" style="--i:1;--tilt:-7deg;--dy:8px;--suit:#17151a">
+<span class="hc-corner" aria-hidden="true">K<br>&#9824;</span>
+<span class="hc-corner br" aria-hidden="true">K<br>&#9824;</span>
+<span class="hc-icon" aria-hidden="true"><i class="fa-solid fa-hat-wizard"></i></span>
+<strong class="hc-title">Projects</strong>
+<em class="hc-sub">The Mad Hatter&rsquo;s workshop</em>
+<span class="hc-hint">Ideas I&rsquo;ve shared &amp; shaped</span>
+</a>
+<a class="hub-card" href="#experience" style="--i:2;--tilt:-2.5deg;--dy:0px;--suit:#9c1f38">
+<span class="hc-corner" aria-hidden="true">Q<br>&#9830;</span>
+<span class="hc-corner br" aria-hidden="true">Q<br>&#9830;</span>
+<span class="hc-icon" aria-hidden="true"><i class="fa-solid fa-hourglass-half"></i></span>
+<strong class="hc-title">Experience</strong>
+<em class="hc-sub">The journey so far</em>
+<span class="hc-hint">Internships &amp; roles</span>
+</a>
+<a class="hub-card" href="#leadership" style="--i:3;--tilt:2.5deg;--dy:0px;--suit:#17151a">
+<span class="hc-corner" aria-hidden="true">J<br>&#9827;</span>
+<span class="hc-corner br" aria-hidden="true">J<br>&#9827;</span>
+<span class="hc-icon" aria-hidden="true"><i class="fa-solid fa-chess-queen"></i></span>
+<strong class="hc-title">Leadership</strong>
+<em class="hc-sub">The people along the way</em>
+<span class="hc-hint">Committees &amp; community</span>
+</a>
+<a class="hub-card" href="#certifications" style="--i:4;--tilt:7deg;--dy:8px;--suit:#9c1f38">
+<span class="hc-corner" aria-hidden="true">10<br>&#9829;</span>
+<span class="hc-corner br" aria-hidden="true">10<br>&#9829;</span>
+<span class="hc-icon" aria-hidden="true"><i class="fa-solid fa-scroll"></i></span>
+<strong class="hc-title">Certifications</strong>
+<em class="hc-sub">The curiosity cabinet</em>
+<span class="hc-hint">Learning that counts</span>
+</a>
+<a class="hub-card" href="#contact" style="--i:5;--tilt:12deg;--dy:22px;--suit:#17151a">
+<span class="hc-corner" aria-hidden="true">9<br>&#9824;</span>
+<span class="hc-corner br" aria-hidden="true">9<br>&#9824;</span>
+<span class="hc-icon" aria-hidden="true"><i class="fa-solid fa-door-open"></i></span>
+<strong class="hc-title">Contact</strong>
+<em class="hc-sub">The secret garden</em>
+<span class="hc-hint">Let&rsquo;s connect</span>
+</a>
+</nav>
+
+<a class="wl-hub-home" href="#home"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i> Back to the forest</a>
+
+</section>
+
 <!-- ================= ABOUT ================= -->
 
-<section class="about" id="about">
-
-<div class="blob blob-coral blob-small"></div>
+<section class="about wl-page wl-view" id="about" data-title="About Me">
+<div class="wl-page-scroll">
 
 <p class="section-tag">Get to know me</p>
 
-<h2 class="section-title">About</h2>
+<h2 class="section-title">About Me</h2>
 
 <div class="about-grid">
 
@@ -356,32 +401,17 @@ Download Resume
 
 </div>
 
+</div>
 </section>
 
-<!-- ================= MARQUEE STRIP ================= -->
-
-<div class="marquee-strip">
-
-<div class="marquee-track">
-
-<span>MARKETING</span><span>•</span><span>STRATEGY</span><span>•</span><span>BRANDING</span><span>•</span><span>ANALYTICS</span><span>•</span><span>CONSUMER INSIGHT</span><span>•</span><span>FINANCE</span><span>•</span>
-<span>MARKETING</span><span>•</span><span>STRATEGY</span><span>•</span><span>BRANDING</span><span>•</span><span>ANALYTICS</span><span>•</span><span>CONSUMER INSIGHT</span><span>•</span><span>FINANCE</span><span>•</span>
-
-</div>
-
-</div>
-
-<!-- ================= FEATURED WORK ================= -->
-
-<section class="work" id="projects">
-
-<div class="blob blob-teal blob-small"></div>
+<section class="work wl-page wl-view" id="projects" data-title="Projects">
+<div class="wl-page-scroll">
 
 <p class="section-tag">Selected work</p>
 
-<h2 class="section-title">Featured Work</h2>
+<h2 class="section-title">Projects</h2>
 
-<p class="section-sub">Marketing and strategy perspectives I've written and shared on LinkedIn — scroll to explore.</p>
+<p class="section-sub">Marketing and strategy perspectives I've written and shared on LinkedIn.</p>
 
 <div class="work-carousel">
 
@@ -763,13 +793,13 @@ Download Resume
 
 </div>
 
-<div class="work-scroll-hint"><i class="fa-solid fa-arrow-left"></i> Drag or scroll to explore <i class="fa-solid fa-arrow-right"></i></div>
-
+</div></div>
 </section>
 
 <!-- ================= EXPERIENCE ================= -->
 
-<section class="experience" id="experience">
+<section class="experience wl-page wl-view" id="experience" data-title="Experience">
+<div class="wl-page-scroll">
 
 <p class="section-tag">Where I've worked</p>
 
@@ -861,11 +891,13 @@ Download Resume
 
 </div>
 
+</div>
 </section>
 
 <!-- ================= LEADERSHIP ================= -->
 
-<section class="leadership" id="leadership">
+<section class="leadership wl-page wl-view" id="leadership" data-title="Leadership">
+<div class="wl-page-scroll">
 
 <p class="section-tag">Outside the classroom</p>
 
@@ -925,11 +957,13 @@ Download Resume
 
 </div>
 
+</div>
 </section>
 
 <!-- ================= CERTIFICATIONS ================= -->
 
-<section class="certifications" id="certifications">
+<section class="certifications wl-page wl-view" id="certifications" data-title="Certifications">
+<div class="wl-page-scroll">
 
 <p class="section-tag">Always learning</p>
 
@@ -997,11 +1031,13 @@ Download Resume
 
 </div>
 
+</div>
 </section>
 
 <!-- ================= CONTACT ================= -->
 
-<section class="contact" id="contact">
+<section class="contact wl-page wl-view" id="contact" data-title="Contact">
+<div class="wl-page-scroll">
 
 <p class="section-tag">Let's connect</p>
 
@@ -1053,37 +1089,12 @@ Download Resume
 
 </div>
 
+</div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 
-<footer>
-
-<div class="footer-content">
-
-<div class="footer-logo">TK</div>
-
-<p>Marketing · Strategy · Analytics</p>
-
-<div class="footer-socials">
-
-<a href="https://www.linkedin.com/in/tanvi-khandelwal-105405252/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-
-<a href="mailto:tanvikhandelwal@imthyderabad.edu.in"><i class="fa-solid fa-envelope"></i></a>
-
-</div>
-
-<p class="footer-copy">© 2026 Tanvi Khandelwal. All rights reserved.</p>
-
-</div>
-
-</footer>
-
-<button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
-
-<i class="fa-solid fa-arrow-up"></i>
-
-</button>
+</main>
 
 <!-- ================= WORK MODAL (for posts without an external link) ================= -->
 
@@ -1266,6 +1277,7 @@ Download Resume
 </template>
 
 <script src="script.js"></script>
+<script src="wonderland-app.js"></script>
 <script src="wonderland-home.js"></script>
 
 </body>
