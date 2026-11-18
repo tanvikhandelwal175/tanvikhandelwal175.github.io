@@ -111,7 +111,7 @@ body.wl-app{ background:#101B1B; }
 
 .hub-card{
     position:relative; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; text-align:center;
-    width:clamp(138px, calc(var(--u) * 14.2), 222px); aspect-ratio:170/250; padding:0 10px clamp(12px, 1.6vh, 20px);
+    width:clamp(124px, calc(var(--u) * 12.1), 212px); aspect-ratio:170/250; padding:0 10px clamp(12px, 1.6vh, 20px);
     color:#17151A; text-decoration:none;
     background:linear-gradient(160deg, #F7EDD5, #DCCBA3);
     border:3px solid #2a1b12; border-radius:14px;
@@ -134,7 +134,7 @@ body.wl-app{ background:#101B1B; }
     background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.75), rgba(214,173,105,.28));
     border:2px solid var(--suit, #17151A); box-shadow:0 4px 10px rgba(0,0,0,.22);
 }
-.hc-title{ margin-top:clamp(8px, 1.4vh, 16px); font:400 clamp(16px, calc(var(--u) * 1.85), 28px)/1.05 'Abril Fatface', Georgia, serif; }
+.hc-title{ margin-top:clamp(8px, 1.4vh, 16px); font:400 clamp(15px, calc(var(--u) * 1.62), 26px)/1.05 'Abril Fatface', Georgia, serif; }
 .hc-sub{ margin-top:4px; font:700 clamp(12px, calc(var(--u) * 1.2), 19px)/1.05 'Caveat', cursive; color:#7a1830; font-style:normal; }
 .hc-hint{ margin-top:6px; font:400 clamp(9px, calc(var(--u) * .76), 12px)/1.3 'Poppins', sans-serif; color:#4b3a2a; opacity:.85; }
 
@@ -310,6 +310,7 @@ section.wl-page > .wl-page-scroll{
     .wl-hub-head .section-tag{ display:none; }
     .wl-hand{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); justify-items:center; gap:10px 10px; max-width:420px; }
     .hub-card{ width:min(36.5vw, 150px); --tilt:0deg !important; --dy:0px !important; }
+    .hub-card:last-child{ grid-column:1 / -1; }
     .wl-hub-home{ margin-top:12px; padding:.6em 1.1em; }
     .hub-card:hover, .hub-card:focus-visible{ transform:translateY(-8px) scale(1.04); }
     .wl-hub-title{ font-size:clamp(30px, 9vw, 44px); }
@@ -349,3 +350,23 @@ section.wl-page > .wl-page-scroll{
 #certifications .cert-card i{ font-size:clamp(20px, calc(var(--u) * 2), 30px); }
 #contact .contact-card h3{ font-size:clamp(15px, calc(var(--u) * 1.4), 21px); }
 #contact .contact-card p{ font-size:clamp(12px, calc(var(--u) * 1.02), 15px); }
+
+/* ==========================================================================
+   MAGIC PAINTBRUSH CURSOR
+   ========================================================================== */
+body.custom-cursor-active, body.custom-cursor-active *{ cursor:none !important; }
+.tk-cursor{ display:none !important; }
+
+.wl-brush{
+    --bs:1.3; position:fixed; left:0; top:0; width:110px; height:110px; margin:0; padding:0;
+    pointer-events:none; z-index:6001; opacity:0; transition:opacity .2s ease; will-change:transform;
+}
+.wl-brush.is-on{ opacity:1; }
+.wl-brush svg{ display:block; overflow:visible; transform-origin:18px 16px; transform:scale(var(--bs)); transition:transform .18s ease; filter:drop-shadow(0 5px 5px rgba(0,0,0,.45)); }
+.wl-brush .tipglow{ transform-origin:18px 16px; transition:transform .25s ease, opacity .25s ease; opacity:.8; animation:wl-brush-pulse 2.4s ease-in-out infinite alternate; }
+.wl-brush.is-hot .tipglow{ transform:scale(1.7); opacity:1; }
+.wl-brush.is-hot svg{ transform:scale(calc(var(--bs) * 1.12)) rotate(-4deg); }
+.wl-brush.is-down svg{ transform:scale(calc(var(--bs) * .9)) rotate(5deg); }
+@keyframes wl-brush-pulse{ from{ opacity:.65; } to{ opacity:1; } }
+.wl-trail{ position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:6000; }
+@media (prefers-reduced-motion: reduce){ .wl-brush .tipglow{ animation:none; } }
