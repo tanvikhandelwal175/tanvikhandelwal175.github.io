@@ -6,7 +6,7 @@
 (function () {
     'use strict';
 
-    var VIEWS = ['home', 'hub', 'about', 'projects', 'experience', 'leadership', 'certifications', 'contact'];
+    var VIEWS = ['home', 'hub', 'about', 'projects', 'experience', 'leadership', 'certifications', 'insights', 'contact'];
     var PAGES = VIEWS.slice(2);
     var TITLES = {
         home: 'Tanvi Khandelwal | Portfolio',
@@ -16,6 +16,7 @@
         experience: 'Experience \u2014 Tanvi Khandelwal',
         leadership: 'Leadership \u2014 Tanvi Khandelwal',
         certifications: 'Certifications \u2014 Tanvi Khandelwal',
+        insights: 'Insights \u2014 Tanvi Khandelwal',
         contact: 'Contact \u2014 Tanvi Khandelwal'
     };
 
@@ -96,10 +97,16 @@
 
     window.addEventListener('popstate', function () { activate(parse()); });
 
-    /* ---- Esc steps back: page -> hub -> home ---- */
+    /* ---- Esc steps back: popup -> sheet -> page -> hub -> home (capture phase: we see the state BEFORE other handlers close things) ---- */
+    var escState = { modal: false, sheet: false };
     document.addEventListener('keydown', function (e) {
         if (e.key !== 'Escape') return;
-        if (document.querySelector('.work-modal-overlay.active')) return;       // the Read More popup handles its own Esc
+        escState.modal = !!document.querySelector('.work-modal-overlay.active');
+        escState.sheet = !!document.querySelector('.wl-sheet-overlay.is-open');
+    }, true);
+    document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Escape' || escState.modal) return;          // the Read More popup handles its own Esc
+        if (escState.sheet) { closeSheet(); return; }
         if (PAGES.indexOf(current) > -1) navigate('hub');
         else if (current === 'hub') navigate('home');
     });
@@ -157,6 +164,61 @@
         sync();
         document.addEventListener('wl:view', function (e) { if (e.detail.id === 'projects') { car.scrollLeft = 0; setTimeout(sync, 50); } });
     }
+
+
+    /* ---- About Me: the mirror's four tabs ---- */
+    var tabs = Array.prototype.slice.call(document.querySelectorAll('.ab-tab'));
+    function pickTab(btn) {
+        tabs.forEach(function (t) { var on = t === btn; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
+        Array.prototype.forEach.call(document.querySelectorAll('.ab-panel'), function (p) { p.classList.toggle('is-on', p.getAttribute('data-panel') === btn.getAttribute('data-tab')); });
+    }
+    tabs.forEach(function (t, i) {
+        t.addEventListener('click', function () { pickTab(t); });
+        t.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); var n = tabs[(i + 1) % tabs.length]; n.focus(); pickTab(n); }
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); var p = tabs[(i + tabs.length - 1) % tabs.length]; p.focus(); pickTab(p); }
+        });
+    });
+
+    /* ---- Insights: a tab opens a sheet with the matching posts ---- */
+    var SHEET = { brand: 'Brand Analyses', market: 'Marketing Observations', biz: 'Business Learnings', all: 'LinkedIn Articles' };
+    var sheet = document.createElement('div');
+    sheet.className = 'wl-sheet-overlay';
+    sheet.innerHTML = '<div class="wl-sheet" role="dialog" aria-modal="true" aria-labelledby="wlSheetTitle">' +
+        '<div class="wl-sheet-head"><h3 class="wl-sheet-title" id="wlSheetTitle"></h3><button type="button" class="wl-sheet-close" aria-label="Close"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></div>' +
+        '<div class="wl-sheet-car"><div class="wl-sheet-track"></div>' +
+        '<button type="button" class="wl-car-btn prev" aria-label="Previous posts"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>' +
+        '<button type="button" class="wl-car-btn next" aria-label="Next posts"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button></div></div>';
+    document.body.appendChild(sheet);
+    var sTrack = sheet.querySelector('.wl-sheet-track'), sPrev = sheet.querySelector('.prev'), sNext = sheet.querySelector('.next'), sTitle = sheet.querySelector('.wl-sheet-title');
+    var lastTab = null;
+    function sheetSync() { sPrev.disabled = sTrack.scrollLeft < 8; sNext.disabled = sTrack.scrollLeft > sTrack.scrollWidth - sTrack.clientWidth - 8; }
+    function openSheet(key, trigger) {
+        sTrack.innerHTML = '';
+        var n = 0;
+        Array.prototype.forEach.call(document.querySelectorAll('#insights .wl-posts .work-card'), function (c) {
+            if (key === 'all' || c.getAttribute('data-cat') === key) { sTrack.appendChild(c.cloneNode(true)); n++; }
+        });
+        sTitle.innerHTML = SHEET[key] + '<small>' + n + (n === 1 ? ' post' : ' posts') + ' &middot; from LinkedIn</small>';
+        lastTab = trigger || null;
+        sheet.classList.add('is-open');
+        sTrack.scrollLeft = 0; setTimeout(sheetSync, 60);
+        sheet.querySelector('.wl-sheet-close').focus();
+    }
+    function closeSheet() { sheet.classList.remove('is-open'); if (lastTab) lastTab.focus(); }
+    Array.prototype.forEach.call(document.querySelectorAll('.tab-card[data-sheet]'), function (t) {
+        t.addEventListener('click', function () { openSheet(t.getAttribute('data-sheet'), t); });
+    });
+    sheet.addEventListener('click', function (e) {
+        if (e.target === sheet || e.target.closest('.wl-sheet-close')) { closeSheet(); return; }
+        var trig = e.target.closest('.work-modal-trigger');                  // "Read More" on a post that has no LinkedIn link
+        if (trig && typeof openWorkModal === 'function') openWorkModal(trig.getAttribute('data-modal-target'));
+    });
+    sPrev.addEventListener('click', function () { sTrack.scrollBy({ left: -Math.round(sTrack.clientWidth * .72), behavior: 'smooth' }); });
+    sNext.addEventListener('click', function () { sTrack.scrollBy({ left: Math.round(sTrack.clientWidth * .72), behavior: 'smooth' }); });
+    sTrack.addEventListener('scroll', sheetSync, { passive: true });
+    sTrack.addEventListener('wheel', function (e) { if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) { sTrack.scrollLeft += e.deltaY; e.preventDefault(); } }, { passive: false });
+    document.addEventListener('wl:view', function () { sheet.classList.remove('is-open'); });
 
     /* ---- boot: honour the URL (refresh / shared link / Back) ---- */
     activate(parse());
