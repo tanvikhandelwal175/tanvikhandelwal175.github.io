@@ -197,13 +197,12 @@ header::after{ display:none; }
     transition:filter .35s;
 }
 .wl-sign-wrap.rev{ left:calc(var(--px) + var(--H) * .04); translate:-100% 0; transform-origin:calc(100% - var(--H) * .04) 50%; }
-.wl-sign-wrap.s1{ top:0; } .wl-sign-wrap.s2{ top:calc(var(--H) * .083); } .wl-sign-wrap.s3{ top:calc(var(--H) * .166); }
-.wl-sign-wrap.s4{ top:calc(var(--H) * .249); } .wl-sign-wrap.s5{ top:calc(var(--H) * .332); } .wl-sign-wrap.s6{ top:calc(var(--H) * .415); } .wl-sign-wrap.s7{ top:calc(var(--H) * .498); }
+.wl-sign-wrap.s1{ top:calc(var(--H) * 0.0); } .wl-sign-wrap.s2{ top:calc(var(--H) * 0.0655); } .wl-sign-wrap.s3{ top:calc(var(--H) * 0.131); } .wl-sign-wrap.s4{ top:calc(var(--H) * 0.1965); } .wl-sign-wrap.s5{ top:calc(var(--H) * 0.262); } .wl-sign-wrap.s6{ top:calc(var(--H) * 0.3275); } .wl-sign-wrap.s7{ top:calc(var(--H) * 0.393); } .wl-sign-wrap.s8{ top:calc(var(--H) * 0.4585); }
 @keyframes wl-swing{ from{ rotate:calc(var(--rot) - 1.7deg); } to{ rotate:calc(var(--rot) + 1.7deg); } }
 
 .wl-sign{
     display:block; border:0; cursor:pointer; white-space:nowrap; text-decoration:none;
-    font:700 clamp(10px, calc(var(--H) * .0196), 19px)/1 'Cinzel', Georgia, serif;
+    font:700 clamp(10px, calc(var(--H) * .0188), 18px)/1 'Cinzel', Georgia, serif;
     letter-spacing:.07em; text-transform:uppercase;
     color:#2c190b; text-shadow:0 1px 0 rgba(255,236,190,.42), 0 -1px 0 rgba(0,0,0,.25);
     padding:.66em 2.2em .66em 1.2em;
@@ -425,19 +424,23 @@ header::after{ display:none; }
     transition:opacity .8s ease, scale .8s ease, filter .8s ease;
 }
 .wl-paper{
-    position:absolute; inset:-4% -6% -5%;
+    /* a clearing of soft parchment light - far larger than the text so every edge is a long, feathered fade into the forest */
+    position:absolute; inset:-24% -26% -17%; pointer-events:none;
     background:
-        radial-gradient(120% 90% at 50% 38%, rgba(255,250,234,.88), rgba(233,220,193,0) 66%),
-        radial-gradient(circle at 16% 10%, rgba(150,108,58,.22), transparent 38%),
-        radial-gradient(circle at 88% 90%, rgba(115,76,38,.26), transparent 42%),
-        linear-gradient(180deg, #eadfc3, #e0cfa6 58%, #cdb98a);
-    filter:url(#wlTorn) drop-shadow(0 22px 30px rgba(0,0,0,.6));
+        radial-gradient(ellipse 50% 50% at 50% 46%,
+            rgba(247,240,218,.98) 0%, rgba(244,236,210,.96) 40%, rgba(234,228,202,.88) 58%,
+            rgba(208,222,202,.56) 74%, rgba(150,188,178,.22) 88%, rgba(120,170,160,0) 100%);
+    -webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%, #000 56%, transparent 99%);
+            mask-image:radial-gradient(ellipse 50% 50% at 50% 50%, #000 56%, transparent 99%);
 }
-.wl-paper::after{
-    content:""; position:absolute; inset:5.2% 5.4%;
-    border:1.5px solid rgba(88,31,50,.5); border-radius:8px;
-    outline:1px solid rgba(88,31,50,.22); outline-offset:5px;
+.wl-paper::before{                                   /* faint watercolour mottling so it reads as painted light, not a flat gradient */
+    content:""; position:absolute; inset:0; opacity:.5; mix-blend-mode:multiply;
+    background:
+        radial-gradient(circle at 24% 30%, rgba(160,130,80,.22), transparent 34%),
+        radial-gradient(circle at 78% 70%, rgba(110,150,140,.26), transparent 40%),
+        radial-gradient(circle at 60% 18%, rgba(190,160,110,.18), transparent 30%);
 }
+.wl-paper::after{ display:none; }
 .wl-panel-inner{
     position:relative; text-align:center;
     padding:clamp(10px, calc(var(--u) * 1.6), 26px) clamp(22px, calc(var(--u) * 3.2), 54px) clamp(22px, calc(var(--u) * 2.4), 40px);
@@ -454,6 +457,7 @@ header::after{ display:none; }
 }
 .wl-ln{ display:block; clip-path:inset(0 100% 0 0); filter:blur(5px); animation:wl-ink 1s cubic-bezier(.3,.7,.2,1) forwards; }
 .wl-ln.l1{ animation-delay:1.9s; }
+.wl-ln.l1::after{ content:"\25C6"; display:inline-block; color:#9c1f38; font-size:.2em; vertical-align:top; margin:.55em 0 0 .3em; }
 .wl-ln.l2{ animation-delay:2.2s; }
 
 .wl-role, .wl-tag, .wl-intro, .wl-cta{ opacity:0; translate:0 12px; animation:wl-rise .9s ease forwards; }
